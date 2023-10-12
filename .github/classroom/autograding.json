@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "numberOfBoomerangsTest1",
+      "setup": "gradle clean",
+      "run": "gradle test --tests LabTwelveTests.numberOfBoomerangsTest1",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "numberOfBoomerangsTest2",
+      "setup": "",
+      "run": "gradle test --tests LabTwelveTests.numberOfBoomerangsTest2",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "numberOfBoomerangsTest3",
+      "setup": "",
+      "run": "gradle test --tests LabTwelveTests.numberOfBoomerangsTest3",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    },
+    {
+      "name": "numberOfBoomerangsTest4",
+      "setup": "",
+      "run": "gradle test --tests LabTwelveTests.numberOfBoomerangsTest4",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 1,
+      "points": null
+    }
+  ]
+}
