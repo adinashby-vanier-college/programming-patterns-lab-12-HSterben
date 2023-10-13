@@ -1,8 +1,6 @@
 package com.prog2.labs;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 
 /**
  * @author adinashby
@@ -25,20 +23,32 @@ public class LabTwelve {
         if (points.length != 3) {
             return 0;
         }
-        HashSet<Integer> set = new HashSet();
-        
-        int counter = 0;
-        
-        set.add(findDistance(points[0], points[1]));
-        if (!set.add(findDistance(points[0], points[2]))) {
-            System.out.println("false");
-            counter = 1;
+        HashMap<Integer, Integer> map = new HashMap();
+        boolean start = true;
+
+        int distance;
+        for (int i = 0; i < 3; i++) {
+            if (start) {
+                map.put(findDistance(points[0], points[2]), 1);
+                start = false;
+            } else {
+                distance = findDistance(points[i], points[i - 1]);
+                if (map.containsKey(distance)) {
+                    map.put(distance, (map.get(distance) + 1));
+                } else {
+                    map.put(distance, 1);
+                }
+            }
         }
-        if (!set.add(findDistance(points[1], points[2]))) {
-            System.out.println("false again");
-            counter = 2;
+        for (int i : map.values()) {
+            switch(i) {
+                case 3:
+                    return 6;
+                case 2:
+                    return 2;
+            }
         }
-        return counter;
+        return 0;
     }
 
     public static int findDistance(int[] p1, int[] p2) {
